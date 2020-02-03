@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation" app:startDestination="@id/titleFragment">
+
+    <fragment android:id="@+id/titleFragment" android:name="com.example.disney_princesses_test.TitleFragment"
+              android:label="TitleFragment">
+        <action android:id="@+id/action_titleFragment_to_questionFragment" app:destination="@id/questionFragment"/>
+    </fragment>
+    <fragment android:id="@+id/questionFragment" android:name="com.example.disney_princesses_test.QuestionFragment"
+              android:label="QuestionFragment">
+        <action android:id="@+id/action_questionFragment_to_resultFragment" app:destination="@id/resultFragment"/>
+        <action android:id="@+id/action_questionFragment_to_titleFragment2" app:destination="@id/titleFragment"
+                app:popUpTo="@+id/titleFragment"/>
+    </fragment>
+    <fragment android:id="@+id/resultFragment" android:name="com.example.disney_princesses_test.ResultFragment"
+              android:label="fragment_result" tools:layout="@layout/fragment_result">
+        <argument android:name="result" app:argType="integer"/>
+        <action android:id="@+id/action_resultFragment_to_titleFragment" app:destination="@id/titleFragment"
+                app:popUpTo="@+id/titleFragment"/>
+    </fragment>
+</navigation>
