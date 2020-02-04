@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
         tools:context="com.example.android.navigation.TitleFragment">
-
+    <ScrollView
+            android:id="@+id/list_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/titleConstraint"
             android:layout_width="match_parent"
@@ -18,7 +20,8 @@
                 android:layout_height="wrap_content"
                 android:text="@string/title_text"
                 android:gravity="center"
-                android:textSize="20sp"
+                android:textSize="30sp"
+                android:padding="8dp"
                 android:id="@+id/textView"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="10dp"
@@ -30,10 +33,11 @@
                 android:text="Пройти тест"
                 android:background="@color/colorPrimary"
                 android:textColor="@android:color/white"
-                android:padding="5dp"
+                android:padding="8dp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 </layout>

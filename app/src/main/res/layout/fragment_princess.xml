@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+       >
+
+        <ScrollView
+                android:id="@+id/list_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess01_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess01"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess02_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess02"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess03_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess03"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess04_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess04"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess05_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess05"/>
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "@string/princess06_name"
+                        android:textSize="30sp"/>
+                <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="128dp"
+                        android:src="@drawable/princess06"/>
+            </LinearLayout>
+
+        </ScrollView>
+</layout>

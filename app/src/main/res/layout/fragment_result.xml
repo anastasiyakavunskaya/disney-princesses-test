@@ -9,64 +9,72 @@
             android:layout_height="match_parent"
             android:fillViewport="true">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/gameWonConstraintLayout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/gameWonConstraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <ImageView
-                android:id="@+id/result_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:layout_marginTop="32dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.497"/>
-        <TextView
-                android:id="@+id/result_name"
-                tools:text="Name"
-                android:textSize="30sp"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:layout_marginTop="36dp"
-                app:layout_constraintTop_toBottomOf="@+id/result_image" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.139"/>
-        <TextView
-                android:id="@+id/result_info"
-                tools:text="Information about princess"
-                android:textSize="14sp"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                app:layout_constraintBottom_toTopOf="@+id/homeButton"
-                android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/result_name"
-                app:layout_constraintVertical_bias="0.075" android:layout_marginEnd="8dp"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
-                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.198"/>
+            <ImageView
+                    android:id="@+id/result_image"
+                    android:layout_width="313dp"
+                    android:layout_height="297dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:src="@drawable/title_pic"
+                    android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="8dp" android:layout_marginTop="4dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.496"/>
+            <TextView
+                    android:id="@+id/result_name"
+                    tools:text="Name"
+                    android:textSize="25sp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintTop_toBottomOf="@+id/result_image" android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.139"/>
+            <TextView
+                    android:id="@+id/result_info"
+                    tools:text="Information about princess"
+                    android:textSize="18sp"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:padding="8dp"
+                    android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/result_name"
+                    app:layout_constraintVertical_bias="0.075" android:layout_marginEnd="8dp"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginStart="8dp"
+                    app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.198"/>
 
-        <Button
-                android:id="@+id/homeButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="На главную"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.496"
-                android:layout_marginBottom="8dp" app:layout_constraintBottom_toTopOf="@+id/shareResultButton"/>
-        <Button
-                android:id="@+id/shareResultButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Поделиться"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="8dp" android:layout_marginBottom="52dp"
-                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintHorizontal_bias="0.492"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="end"
+                    tools:layout_editor_absoluteX="0dp" android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/result_info" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.124">
+                <Button
+                        android:id="@+id/homeButton"
+                        android:textColor="@android:color/white"
+                        android:background="@color/colorPrimary"
+                        android:layout_margin="5dp"
+                        android:padding="8dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/home_btn_title"
+                        android:textStyle="bold"/>
+                <Button
+                        android:id="@+id/shareResultButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@android:color/white"
+                        android:background="@color/colorPrimary"
+                        android:padding="8dp"
+                        android:layout_margin="5dp"
+                        android:text="@string/share_btn_title"
+                        android:textStyle="bold"/>
 
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
