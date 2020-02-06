@@ -63,4 +63,7 @@
     <string name="share_btn_title">Поделиться</string>
     <string name="princess_btn">О принцессах</string>
     <string name="about_btn">О приложении</string>
+    <string name="next_btn">Дальше</string>
+    <string name="title_picture_content_description">Title picture</string>
+    <string name="icon_picture_description">Icon picture</string>
 </resources>

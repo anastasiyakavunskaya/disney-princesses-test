@@ -5,19 +5,24 @@
 
     <fragment android:id="@+id/titleFragment" android:name="com.example.disney_princesses_test.TitleFragment"
               android:label="Какая ты принцесса Дисней?">
-        <action android:id="@+id/action_titleFragment_to_questionFragment" app:destination="@id/questionFragment"/>
+        <action android:id="@+id/action_titleFragment_to_questionFragment" app:destination="@id/questionFragment"
+                app:enterAnim="@anim/slide_in_right" app:exitAnim="@anim/slide_out_left"
+                app:popEnterAnim="@anim/slide_in_left" app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment android:id="@+id/questionFragment" android:name="com.example.disney_princesses_test.QuestionFragment"
               android:label="QuestionFragment">
-        <action android:id="@+id/action_questionFragment_to_resultFragment" app:destination="@id/resultFragment"/>
+        <action android:id="@+id/action_questionFragment_to_resultFragment" app:destination="@id/resultFragment"
+                app:enterAnim="@anim/fade_in" app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/fade_out"/>
         <action android:id="@+id/action_questionFragment_to_titleFragment2" app:destination="@id/titleFragment"
                 app:popUpTo="@+id/titleFragment"/>
     </fragment>
     <fragment android:id="@+id/resultFragment" android:name="com.example.disney_princesses_test.ResultFragment"
-              tools:layout="@layout/fragment_result">
+    >
         <argument android:name="result" app:argType="integer"/>
         <action android:id="@+id/action_resultFragment_to_titleFragment" app:destination="@id/titleFragment"
-                app:popUpTo="@+id/titleFragment"/>
+                app:popUpTo="@id/titleFragment" app:popUpToInclusive="true" app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out" app:popEnterAnim="@anim/fade_in" app:popExitAnim="@anim/fade_out"/>
     </fragment>
     <fragment android:id="@+id/princessFragment" android:name="com.example.disney_princesses_test.PrincessFragment"
               android:label="Принцессы" tools:layout="@layout/fragment_princess">

@@ -11,6 +11,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.navigation.ui.AppBarConfiguration
 import com.example.disney_princesses_test.databinding.FragmentResultBinding
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.ButtonBarLayout
 import androidx.navigation.findNavController
 
 
@@ -31,7 +32,6 @@ class ResultFragment : Fragment() {
         val binding: FragmentResultBinding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_result, container, false)
         val args = ResultFragmentArgs.fromBundle(arguments!!)
-
 
         binding.resultName.text = "ТЫ - " + listOfPrincesses[args.result].name
         binding.resultInfo.text = getString(listOfPrincesses[args.result].info)

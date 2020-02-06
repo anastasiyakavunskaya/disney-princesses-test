@@ -1,6 +1,7 @@
 package com.example.disney_princesses_test
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.findNavController
 import com.example.disney_princesses_test.databinding.FragmentQuestionBinding
 
 
+@Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
 class QuestionFragment : Fragment() {
 
     data class Question(
@@ -47,8 +49,11 @@ class QuestionFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentQuestionBinding>(
             inflater, R.layout.fragment_question, container, false)
 
-        // Shuffles the questions and sets the question index to the first question.
-        randomizeQuestions()
+        if(savedInstanceState!= null) {
+            questionIndex = savedInstanceState.getInt("key_question")
+            answersIndexArray = savedInstanceState.getIntegerArrayList("key_answersInd")
+            setQuestion(savedInstanceState.getStringArrayList("key_answers"))
+        }else setQuestion(null)
 
         // Bind this fragment class to the layout
         binding.game = this
@@ -78,10 +83,13 @@ class QuestionFragment : Fragment() {
                 // Advance to the next question
                 if (questionIndex < numQuestions) {
                     currentQuestion = questions[questionIndex]
-                    setQuestion()
+                    setQuestion(null)
                     binding.invalidateAll()
                 } else {
+                    Log.i("question","answers: $answersIndexArray")
                     view.findNavController().navigate(QuestionFragmentDirections.actionQuestionFragmentToResultFragment(countResult(answersIndexArray)))
+                    questionIndex = 0
+                    answersIndexArray = arrayListOf(0,0,0,0,0,0)
                 }
             }
         }
@@ -89,23 +97,26 @@ class QuestionFragment : Fragment() {
     }
 
 
-    // randomize the questions and set the first question
-    private fun randomizeQuestions() {
-        questions.shuffle()
-        questionIndex = 0
-        setQuestion()
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt("key_question", questionIndex)
+        outState.putIntegerArrayList("key_answersInd", answersIndexArray)
+        outState.putStringArrayList("key_answers", ArrayList(answers))
     }
 
     // Sets the question and randomizes the answers.  This only changes the data, not the UI.
     // Calling invalidateAll on the FragmentGameBinding updates the data.
-    private fun setQuestion() {
+    private fun setQuestion(listOfAnswers: ArrayList<String>?) {
+
         currentQuestion = questions[questionIndex]
         (activity as AppCompatActivity).supportActionBar!!.title = "Вопрос " + (questionIndex+1)+ " из " + numQuestions
-        // randomize the answers into a copy of the array
-        answers = currentQuestion.answers.toMutableList()
-        // and shuffle them
-        answers.shuffle()
-        //(activity as AppCompatActivity).supportActionBar?.title = getString(R.string.title_android_trivia_question, questionIndex + 1, numQuestions)
+
+        if(listOfAnswers!=null) answers = listOfAnswers.toMutableList()
+        else{
+            answers = currentQuestion.answers.toMutableList()
+            answers.shuffle()
+        }
     }
 
     private fun countResult(answers: ArrayList<Int>) = answers.indexOf(answers.max())

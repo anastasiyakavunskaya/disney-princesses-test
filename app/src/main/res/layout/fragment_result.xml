@@ -10,9 +10,9 @@
             android:fillViewport="true">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/gameWonConstraintLayout"
+                android:id="@+id/ResultConstraintLayout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
             <ImageView
                     android:id="@+id/result_image"
@@ -22,7 +22,8 @@
                     tools:src="@drawable/title_pic"
                     android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="8dp" android:layout_marginTop="4dp"
-                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.496"/>
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintHorizontal_bias="0.496"
+                    android:contentDescription="@string/title_picture_content_description"/>
             <TextView
                     android:id="@+id/result_name"
                     tools:text="Name"
@@ -62,6 +63,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/home_btn_title"
+                        style="@android:style/ButtonBar"
                         android:textStyle="bold"/>
                 <Button
                         android:id="@+id/shareResultButton"
@@ -69,9 +71,10 @@
                         android:layout_height="wrap_content"
                         android:textColor="@android:color/white"
                         android:background="@color/colorPrimary"
-                        android:padding="8dp"
+                        android:padding="10dp"
                         android:layout_margin="5dp"
                         android:text="@string/share_btn_title"
+                        style="@android:style/ButtonBar"
                         android:textStyle="bold"/>
 
             </LinearLayout>
