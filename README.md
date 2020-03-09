@@ -1,6 +1,6 @@
 # Приложение для прохождения теста "Какая ты принцесса из Дисней?"
 
-Создано на основе приложения из курса udacity "Developing Android Apps with Kotlin" урок 4 для практики Navigation library с помощью многожества фрагментов.
+Создано на основе приложения из курса udacity "Developing Android Apps with Kotlin" урок 4 для практики Navigation library с помощью множества фрагментов.
 
 Ниже представлены некоторые скрины:
 Начальный экран (overflow menu и navigation drawer menu)
